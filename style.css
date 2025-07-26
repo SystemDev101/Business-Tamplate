@@ -50,6 +50,62 @@
 .nav-links ul li a:hover {
     color: #007bff;
 }
+/* Burger Menu */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.burger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Burger Logic */
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: white;
+        padding: 10px 0;
+        position: absolute;
+        top: 60px;
+        /* Adjust depending on navbar height */
+        left: 0;
+        z-index: 999;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .nav-links ul li {
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-links ul li a {
+        padding: 10px;
+        display: block;
+        color: #333;
+    }
+}
 
 /*  Hero Section */
 .hero-section {
